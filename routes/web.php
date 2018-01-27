@@ -17,12 +17,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
-
 Route::middleware(['auth'])->group(function () {
     Route::namespace('Admin')->group(function () {
         Route::prefix('admin')->group(function () {
+
             Route::get('/', 'IndexController@index')->name('admin.index');
+            Route::name('admin.')->group(function () {
+                Route::resource('projects', 'ProjectController');
+            });
+
         });
     });
 });

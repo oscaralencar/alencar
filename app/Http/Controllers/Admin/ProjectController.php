@@ -2,11 +2,27 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Project;
+use App\Http\Requests\Admin\StoreProject;
+use App\Http\Requests\Admin\UpdateProject;
+use App\Models\Admin\Project;
+use App\Models\Client;
+use App\Models\Type;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProjectController extends Controller
 {
+    private $project;
+    private $client;
+    private $type;
+
+    public function __construct(Project $project, Client $client, Type $type)
+    {
+        $this->project  = $project;
+        $this->client   = $client;
+        $this->type     = $type;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +30,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projects = $this->project::with('client', 'type')->get();
+        return view('admin.projects.index', compact('projects'));
     }
 
     /**
@@ -24,7 +41,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        $types = $this->type::all()->pluck('name', 'id');
+        $clients = $this->client::all()->pluck('name', 'id');
+        return view('admin.projects.create', compact(['project', 'types', 'clients']));
     }
 
     /**
@@ -33,9 +52,11 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProject $request)
     {
-        //
+        $this->project = new Project($request->all());
+        $this->project->save();
+        return redirect(route('admin.projects.create'));
     }
 
     /**
@@ -57,7 +78,11 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        $types = $this->type::all()->pluck('name', 'id');
+        $clients = $this->client::all()->pluck('name', 'id');
+
+        $project->load(['type', 'client']);
+        return view('admin.projects.edit', compact(['project', 'types', 'clients']));
     }
 
     /**
@@ -67,9 +92,10 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateProject $request, Project $project)
     {
-        //
+        $project->fill($request->all())->save();
+        return redirect(route('admin.projects.index'));
     }
 
     /**
@@ -80,6 +106,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect(route('admin.projects.index'));
     }
 }
