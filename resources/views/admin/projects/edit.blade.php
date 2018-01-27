@@ -13,16 +13,15 @@
 
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Striped Full Width Table</h3>
+                    <h3 class="box-title">Editar projeto</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
                     {{ Form::model($project, ['route' => ['admin.projects.update', $project->id],  'method' => 'put', 'id' => 'formulario']) }}
                     @include('admin.projects._fields')
                     {{ Form::submit('Atualizar', ['class' => 'btn btn-info']) }}
-                    {{ Form::close() }}
-
                     <a href="{{ route('admin.projects.destroy', ['id' => $project->id]) }}" class="btn btn-danger btn-excluir">Excluir</a>
+                    {{ Form::close() }}
                     <form id="form-excluir" action="{{ route('admin.projects.destroy', ['id' => $project->id]) }}" method="post" style="display: none;">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}

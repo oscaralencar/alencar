@@ -29,3 +29,13 @@ Route::middleware(['auth'])->group(function () {
         });
     });
 });
+
+Route::namespace('Site')->group(function () {
+    Route::name('site.')->group(function () {
+        Route::get('/', 'IndexController@index')->name('index');
+        Route::get('sobre', 'SobreController@index')->name('sobre');
+        Route::get('curriculo', 'CurriculoController@index')->name('curriculo');
+        Route::get('portfolio', 'PortfolioController@index')->name('portfolio');
+        Route::get('contato', 'ContatoController@index')->name('contato');
+    });
+});
