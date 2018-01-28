@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\StoreProject;
 use App\Http\Requests\Admin\UpdateProject;
-use App\Models\Admin\Project;
+use App\Models\Project;
 use App\Models\Client;
 use App\Models\Type;
 use Illuminate\Http\Request;
