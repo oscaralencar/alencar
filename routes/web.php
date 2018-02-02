@@ -24,6 +24,8 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 'IndexController@index')->name('admin.index');
             Route::name('admin.')->group(function () {
                 Route::resource('projects', 'ProjectController');
+                Route::resource('types', 'TypeController');
+                Route::resource('clients', 'ClientController');
             });
 
         });
