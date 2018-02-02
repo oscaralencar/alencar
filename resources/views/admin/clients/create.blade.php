@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Tipos de Projeto')
+@section('title', 'Clientes')
 
 @section('content_header')
-    <h1>Tipos de Projeto</h1>
+    <h1>Clientes</h1>
 @stop
 
 @section('content')
@@ -20,9 +20,9 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    {{ Form::open(['route' => ['admin.types.store']]) }}
+                    {{ Form::open(['route' => ['admin.clients.store']]) }}
 
-                    @include('admin.types._fields')
+                    @include('admin.clients._fields')
 
                     {{ Form::submit('Criar', ['class' => 'btn btn-success']) }}
 

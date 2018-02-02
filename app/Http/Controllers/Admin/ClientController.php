@@ -8,6 +8,12 @@ use App\Http\Controllers\Controller;
 
 class ClientController extends Controller
 {
+    private $client;
+
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-
+        $clients = $this->client::all();
+        return view('admin.clients.index', compact('clients'));
     }
 
     /**
@@ -25,7 +32,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.clients.create');
     }
 
     /**
@@ -36,7 +43,9 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->client = new Type($request->all());
+        $this->client->save();
+        return redirect(route('admin.types.create'));
     }
 
     /**
@@ -58,7 +67,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        return view('admin.clients.edit', compact('client'));
     }
 
     /**
@@ -70,7 +79,8 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
+        $client->fill($request->all())->save();
+        return redirect(route('admin.clients.index'));
     }
 
     /**
@@ -81,6 +91,7 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        $client->delete();
+        return redirect(route('admin.clients.index'));
     }
 }

@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'Tipos de Projeto')
+@section('title', 'Clientes')
 
 @section('content_header')
     <h1>
-        Tipos de Projeto
-        <a class="btn btn-primary btn-sm" href="{{ route('admin.types.create') }}"> Criar</a>
+        Clientes
+        <a class="btn btn-primary btn-sm" href="{{ route('admin.clients.create') }}"> Criar</a>
     </h1>
 @stop
 
@@ -21,17 +21,19 @@
                     <tbody><tr>
                         <th>#</th>
                         <th>Nome</th>
-                        <th>Tipo</th>
+                        <th>Url</th>
+                        <th>Imagem</th>
 
                         <th></th>
                     </tr>
 
-                    @foreach($types as $type)
+                    @foreach($clients as $client)
                         <tr>
-                            <td>{{ $type->id }}</td>
-                            <td>{{ $type->name }}</td>
-                            <td>{{ $type->label }}</td>
-                            <td><a href="{{route('admin.types.edit', $type->id)}}">Editar</a></td>
+                            <td>{{ $client->id }}</td>
+                            <td>{{ $client->name }}</td>
+                            <td>{{ $client->url }}</td>
+                            <td>{{ $client->image }}</td>
+                            <td><a href="{{route('admin.clients.edit', $client->id)}}">Editar</a></td>
                         </tr>
                     @endforeach
 
