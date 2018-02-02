@@ -9,18 +9,21 @@ use App\Models\Client;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
     private $project;
     private $client;
     private $type;
+    private $storage;
 
-    public function __construct(Project $project, Client $client, Type $type)
+    public function __construct(Project $project, Client $client, Type $type, Storage $storage)
     {
         $this->project  = $project;
         $this->client   = $client;
         $this->type     = $type;
+        $this->storage = $storage;
     }
 
     /**
@@ -55,7 +58,9 @@ class ProjectController extends Controller
     public function store(StoreProject $request)
     {
         $this->project = new Project($request->all());
-        $this->project->save();
+        $dataForm = $request->all();
+        $dataForm['image'] = $this->storage::putFile('projects', $request->file('image'));
+        $this->project->create($dataForm);
         return redirect(route('admin.projects.create'));
     }
 

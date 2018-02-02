@@ -43,7 +43,7 @@
     <script>
         $('.btn-excluir').click( function (e) {
             e.preventDefault();
-            var x = confirm("Deseja excluir este projeto?");
+            var x = confirm("Deseja excluir este cliente?");
             if (x != true) { return; }
             $('#form-excluir').submit();
         });

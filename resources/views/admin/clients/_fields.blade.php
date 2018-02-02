@@ -8,7 +8,7 @@
 </div>
 <div class="form-group">
     {{ Form::label('image', 'Imagem') }}
-    {{ Form::text('image', null, ['class' => 'form-control']) }}
+    {{ Form::file('image', null, ['class' => 'form-control']) }}
 </div>
 
 {{ Form::token() }}

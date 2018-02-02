@@ -5,14 +5,17 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class ClientController extends Controller
 {
     private $client;
+    private $storage;
 
-    public function __construct(Client $client)
+    public function __construct(Client $client, Storage $storage)
     {
         $this->client = $client;
+        $this->storage = $storage;
     }
     /**
      * Display a listing of the resource.
@@ -43,9 +46,11 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $this->client = new Type($request->all());
-        $this->client->save();
-        return redirect(route('admin.types.create'));
+        $this->client = new Client();
+        $dataForm = $request->all();
+        $dataForm['image'] = $this->storage::putFile('clients', $request->file('image'));
+        $this->client->create($dataForm);
+        return redirect(route('admin.clients.create'));
     }
 
     /**

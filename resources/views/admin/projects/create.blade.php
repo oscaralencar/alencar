@@ -20,7 +20,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    {{ Form::open(['route' => ['admin.projects.store']]) }}
+                    {{ Form::open(['route' => ['admin.projects.store'], 'files' => true]) }}
 
                     @include('admin.projects._fields')
 

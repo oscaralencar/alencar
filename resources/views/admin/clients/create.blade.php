@@ -16,11 +16,11 @@
 
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Criar novo tipo de projeto</h3>
+                    <h3 class="box-title">Criar novo cliente</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    {{ Form::open(['route' => ['admin.clients.store']]) }}
+                    {{ Form::open(['route' => ['admin.clients.store'], 'files' => true]) }}
 
                     @include('admin.clients._fields')
 
