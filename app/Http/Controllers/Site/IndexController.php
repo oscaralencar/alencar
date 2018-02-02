@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Models\Admin\Project;
+use App\Models\Project;
 use App\Models\Client;
 use App\Models\Type;
 use Illuminate\Http\Request;
