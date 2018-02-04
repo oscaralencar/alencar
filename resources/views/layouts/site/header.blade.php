@@ -8,11 +8,8 @@
                     <h1>Oscar Alencar</h1>
                     <h4>Desenvolvedor Web e Mobile</h4>
                     <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="https://twitter.com/OscarAlencar" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/oscar-alencar/" target="_blank"><i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
                 <!-- nav starts here -->
@@ -33,11 +30,10 @@
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav">
-                                        <li><a class="active" href="{{ route('site.index') }}">home</a></li>
-                                        <li><a href="{{ route('site.sobre') }}">sobre mim</a></li>
-                                        <li><a href="{{ route('site.curriculo') }}">meu currículo</a></li>
-                                        <li><a href="{{ route('site.portfolio') }}">meu portfólio</a></li>
-                                        <li><a href="{{ route('site.contato') }}">contato</a></li>
+                                        <li><a href="{{ route('site.index') }}" class="@active('/', 'active')">home</a></li>
+                                        <li><a href="{{ route('site.curriculo') }}" class="@active('curriculo', 'active')">meu currículo</a></li>
+                                        <li><a href="{{ route('site.portfolio') }}" class="@active('portfolio', 'active')">meu portfólio</a></li>
+                                        <li><a href="{{ route('site.contato') }}"   class="@active('contato', 'active')">contato</a></li>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->

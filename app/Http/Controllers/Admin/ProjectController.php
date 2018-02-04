@@ -59,7 +59,7 @@ class ProjectController extends Controller
     {
         $this->project = new Project($request->all());
         $dataForm = $request->all();
-        $dataForm['image'] = $this->storage::putFile('projects', $request->file('image'));
+        $dataForm['image'] = $request->file('image')->store('projects', 'public');
         $this->project->create($dataForm);
         return redirect(route('admin.projects.create'));
     }
@@ -99,7 +99,10 @@ class ProjectController extends Controller
      */
     public function update(UpdateProject $request, Project $project)
     {
-        $project->fill($request->all())->save();
+        $dataForm = $request->all();
+        $dataForm['image'] = $request->file('image')->store('projects', 'public');
+        $project->fill($dataForm)->save();
+
         return redirect(route('admin.projects.index'));
     }
 

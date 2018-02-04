@@ -28,7 +28,7 @@
             <!-- single portfolio item -->
             <div class="col-md-4 col-sm-6 mix {{ $project->type->name }} all" data-myorder="2">
                 <div class="single-work">
-                    <img src="{!! '/storage/'.$project->image !!}">
+                    <img src="{{ asset('storage/'.$project->image) }}">
                     <div class="overlay">
                         <h3>{{ $project->title }}</h3>
                         <a href="#" type="button" data-toggle="modal" data-target="#myModal{{$project->id}}"><i class="fa fa-search-plus"></i></a>

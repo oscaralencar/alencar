@@ -84,7 +84,9 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        $client->fill($request->all())->save();
+        $dataForm = $request->all();
+        $dataForm['image'] = $request->file('image')->store('clients', 'public');
+        $client->fill($dataForm)->save();
         return redirect(route('admin.clients.index'));
     }
 

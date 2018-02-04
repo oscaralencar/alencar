@@ -26,7 +26,8 @@ class UpdateProject extends FormRequest
         return [
             'title'     => 'required|min:3',
             'client_id' => 'required',
-            'type_id'   => 'required'
+            'type_id'   => 'required',
+            'image'     => 'dimensions:width=600,height=600'
         ];
     }
 }

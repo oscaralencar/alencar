@@ -197,6 +197,9 @@ ul.navbar li a:hover, ul.navbar li a.active, .navbar-default .navbar-nav>li>a:ho
 	float: none;
 }
 
+.content-geral p{
+	font-size: 18px !important;
+}
 
 /********content section*******/
 .content a{
@@ -227,6 +230,7 @@ ul.navbar li a:hover, ul.navbar li a.active, .navbar-default .navbar-nav>li>a:ho
 	margin-bottom: 25px;
 	line-height: 1;
 }
+
 .post-content a img{
 	margin-bottom: 20px;
 	transition: all .5s ease 0s;
@@ -242,6 +246,7 @@ ul.navbar li a:hover, ul.navbar li a.active, .navbar-default .navbar-nav>li>a:ho
 	font-size: 18px;
 	color: #444444;
 }
+
 .content a:hover{
 	text-decoration: none;
 }

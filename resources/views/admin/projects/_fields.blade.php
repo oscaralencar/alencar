@@ -7,7 +7,7 @@
     {{ Form::textarea('description', null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
-    {{ Form::label('image', 'Imagem') }}
+    {{ Form::label('image', 'Imagem (600x600px') }}
     {{ Form::file('image', null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
@@ -27,7 +27,7 @@
     {{ Form::text('technology', null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
-    {{ Form::label('client_id', 'Cliente') }}
+    {{ Form::label('client_id', 'Cliente*', ['class' => 'text-danger']) }}
     {!!
         Form::select('client_id', $clients->all(),
         $client_id = isset($projeto->client->id) ? $projeto->client->id : null,
@@ -35,7 +35,7 @@
     !!}
 </div>
 <div class="form-group">
-    {{ Form::label('type_id', 'Tipo do projeto') }}
+    {{ Form::label('type_id', 'Tipo do projeto*', ['class' => 'text-danger']) }}
     {!!
         Form::select('type_id', $types->all(),
         $client_id = isset($projeto->type->id) ? $projeto->type->id : null,

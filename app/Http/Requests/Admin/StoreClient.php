@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreProject extends FormRequest
+class StoreClient extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreProject extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,10 +24,9 @@ class StoreProject extends FormRequest
     public function rules()
     {
         return [
-            'title'     => 'required',
-            'client_id' => 'required',
-            'type_id'   => 'required',
-            'image'     => 'dimensions:width=600,height=600'
+            'name'  => 'required',
+            'url'   => 'url',
+            'image' => 'dimensions:width=600,height=600'
         ];
     }
 }

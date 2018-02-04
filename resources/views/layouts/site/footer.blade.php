@@ -3,13 +3,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-4">
-                    <h3>about me</h3>
-                    <p>I'm a Professional Web Developer. I have a great experience for a long time about Front-end and Wordpress theme development. I  try to give the best services.</p>
-                    <a href="about.html">Read full about me</a>
+                    <h3>Sobre mim</h3>
+                    <p>Desenvolvedor web, apaixonado por tecnologia. Com experiência de mais de 8 anos como desenvolvedor, participei de vários projetos importantes e desafiadores.
+                    </p>
+                    {{--<a href="about.html">Read full about me</a>--}}
                     <address>
-                        E-mail: hello@shapedtheme.com <br>
-                        Phone: +88-0-1723 511 340 <br>
-                        239/2 NA, Dhaka 1206, BD
+                        E-mail: oscar@alencar.in <br>
+                        Belém, PA - Brasil
                     </address>
                 </div>
                 <div class="col-md-4">
@@ -20,22 +20,13 @@
                         <input type="submit" value="SUBSCRIBE NOW">
                     </form>
                     <div class="socials text-center">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="https://twitter.com/OscarAlencar" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/oscar-alencar/" target="_blank"><i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="col-md-4 instagram-photos">
-                    <h3>Follow @ Instagram</h3>
-                    <!-- place your instagram widget below -->
-                    <a href="#"><img src="http://placehold.it/100x100" alt=""></a>
-                    <a href="#"><img src="http://placehold.it/100x100" alt=""></a>
-                    <a href="#"><img src="http://placehold.it/100x100" alt=""></a>
-                    <a href="#"><img src="http://placehold.it/100x100" alt=""></a>
-                    <a href="#"><img src="http://placehold.it/100x100" alt=""></a>
-                    <a href="#"><img src="http://placehold.it/100x100" alt=""></a>
+                    <h3>Siga @OscarAlencar</h3>
+                    <a class="twitter-timeline" data-height="200" data-theme="dark" href="https://twitter.com/OscarAlencar?ref_src=twsrc%5Etfw">Tweets by OscarAlencar</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
         </div>
@@ -47,7 +38,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p>&copy; 2015 — Designed by <a href="https://www.behance.net/khalilkode">Md. Khalil Uddin</a> &amp; Developed by <a href="http://mostafiz.me">Mostafizur Rahman</a></p>
+                    <p>&copy; {{ date("Y") }} — Site desenvolvido com <a href="http://laravel.com" target="_blank">Laravel</a></p>
                 </div>
                 <div class="col-md-6 footer-menu text-right">
                     <ul class="list-inline">
