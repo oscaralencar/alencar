@@ -39,5 +39,7 @@ Route::namespace('Site')->group(function () {
         Route::get('curriculo', 'CurriculoController@index')->name('curriculo');
         Route::get('portfolio', 'PortfolioController@index')->name('portfolio');
         Route::get('contato', 'ContatoController@index')->name('contato');
+        Route::post('contato', 'ContatoController@enviar')->name('contato.enviar');
+
     });
 });

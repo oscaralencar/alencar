@@ -54,10 +54,9 @@
 </footer>
 <!-- script tags
 ============================================================= -->
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/jquery.mixitup.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="assets/js/jquery-2.1.1.js"></script>
+<script src="assets/js/jquery.mixitup.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/custom.js"></script>
 </body>
 </html>

@@ -12,8 +12,8 @@
                         <li class="filter active" data-filter=".all">All</li>
                         @forelse($types as $type)
                             <li class="filter" data-filter=".{{ $type->name }}">{{ $type->label }}</li>
-                    @empty
-                    @endforelse
+                        @empty
+                        @endforelse
                     <!--
                     <li class="filter active" data-filter=".all">All</li>
                     <li class="filter" data-filter=".web-development">Web Development</li>

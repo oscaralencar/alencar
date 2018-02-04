@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 no-padding">
                 <div class="col-md-12 text-center user">
-                    <img src="img/user.jpg" alt="Me" class="img-circle">
+                    <img src="assets/img/user.jpg" alt="Me" class="img-circle">
                     <h1>Oscar Alencar</h1>
                     <h4>Desenvolvedor Web e Mobile</h4>
                     <div class="social-icons">
