@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Http\Requests\Site\EnviarContatoRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use \Mailjet\Resources;
@@ -24,7 +25,7 @@ class ContatoController extends Controller
         return view('site.contato');
     }
 
-    public function enviar(Request $request)
+    public function enviar(EnviarContatoRequest $request)
     {
         $body = [
             'Messages' => [

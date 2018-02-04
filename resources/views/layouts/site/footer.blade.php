@@ -13,11 +13,12 @@
                     </address>
                 </div>
                 <div class="col-md-4">
-                    <h3>Subscribe &amp; Follow</h3>
-                    <p>Enter your email address to subscribe to this blog and receive notifications.</p>
-                    <form action="?">
-                        <input type="email" placeholder="Enter your email">
-                        <input type="submit" value="SUBSCRIBE NOW">
+                    <h3>Novidades no @email!</h3>
+                    <p>Receba notificações do meu futuro blog e também grandes novidades! Prometo que você não receberá spams!</p>
+                    <form action="{{ route('site.mailing.cadastrar') }}" method="post" id="mailingForm">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <input type="email" name="email_mailing" id="email_mailing" placeholder="Insira seu melhor email">
+                        <input type="submit" value="INSCREVA-SE AGORA!">
                     </form>
                     <div class="socials text-center">
                         <a href="https://twitter.com/OscarAlencar" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -42,10 +43,10 @@
                 </div>
                 <div class="col-md-6 footer-menu text-right">
                     <ul class="list-inline">
-                        <li><a href="index.html">home</a></li>
-                        <li><a href="about.html">about</a></li>
-                        <li><a href="works.html">my works</a></li>
-                        <li><a href="contact.html">contact</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/curriculo">Currículo</a></li>
+                        <li><a href="/portfolio">Meus trabalhos</a></li>
+                        <li><a href="/contato">Contato</a></li>
                     </ul>
                 </div>
             </div>

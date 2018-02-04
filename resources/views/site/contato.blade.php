@@ -12,6 +12,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6 col-md-offset-3">
 
+                    @include ('layouts.errors')
+
                     @if (session('email-sucesso'))
                         <div class="alert alert-success">
                             {{ session('email-sucesso') }}

@@ -41,5 +41,7 @@ Route::namespace('Site')->group(function () {
         Route::get('contato', 'ContatoController@index')->name('contato');
         Route::post('contato', 'ContatoController@enviar')->name('contato.enviar');
 
+        Route::post('mailing/cadastrar', 'MailingListController@cadastrar')->name('mailing.cadastrar');
+
     });
 });
